@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>horizontal-5</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+        header {}
+        main {}
+        main section {}
+        main .start {font-family: 'Satisfy'; font-style: italic;}
+        main .s_wrap {
+            background: 
+            url(./images/Untitled-2.png),
+            url(./images/back.jpg);
+            background-size: 500px, 100%;
+            background-attachment: scroll scroll;
+            background-position: center center;
+            background-repeat: no-repeat, no-repeat;
+        }   
+        main .start, main .end {
+            background: linear-gradient(aqua,lightblue,coral,yellow); color:#fff; font-size:7rem;
+            line-height: 100vh; width:100%; text-align: center;
+            text-transform: capitalize;
+        }
+        main .s_wrap .s_height {
+            height:400vh;
+        }
+        main .s_wrap .s_height .s_sticky {
+            background: url(./images/back.jpg);
+            position: sticky; top:0;
+        }
+        main .s_wrap .s_height .s_sticky .container {}
+        main .s_wrap .s_height .s_sticky .container a {
+            font-family: 'Satisfy'; font-style: italic;
+            text-transform: capitalize; font-size:10rem; padding:100px;
+            text-decoration: none;
+        }
+        main .end {font-family: 'Satisfy'; font-style: italic;}
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+        <section class="start">start</section>
+        <section class="s_wrap">
+            <div class="s_height">
+                <div class="s_sticky">
+                    <div class="container">
+                        <a href="#">hello</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="end">end</section>
+    </main>
+    <footer></footer>
+    <script>
+        const s_wrap = document.querySelector('.s_wrap')
+        const s_container = document.querySelector('.s_wrap .container')
+        window.addEventListener('scroll',()=>{
+            let yOffset = window.scrollY
+            let amount = yOffset - s_wrap.offsetTop
+            if(window.pageyOffset >= scroll_wrap.offsetTop){
+                scroll_container.style.transform = `translateX(-${amount}px)`
+            }else{
+                scroll_container.style.transform = `translateX(0px)`
+            }
+        })
+
+    </script>
+</body>
+</html>

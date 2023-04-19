@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>interior-1</title>
+    <style>
+        body,html {scroll-behavior:smooth;}
+        * {box-sizing:border-box; margin:0; padding:0;}
+        a {text-decoration: none;}
+
+        header {position:fixed; left:0; top:0; width:100%;}
+        header h1 {padding:10px;}
+        header nav {}
+        header nav a {
+            display:inline-block; line-height:50px;
+            color:#222; padding:0 10px;
+        }
+        main section {height:100vh; background-size:cover; background-position:center;}
+        main .s1 {background-image:url(./images/bg1.jpg);}
+        main .s2 {background-image:url(./images/bg2.jpg);}
+        main .s3 {background-image:url(./images/bg3.jpg);}
+        main .s4 {background-image:url(./images/bg4.jpg);}
+        
+        aside {
+            display:flex; flex-flow:column nowrap;
+            position:fixed; left:10px; top:40%;
+        }
+        aside .bar {
+            width:25px; height:3px; 
+            background:#222; margin-bottom:20px;
+        }
+        aside .bar_active {width:200px; background:#fff;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Interior view</h1>
+        <nav>
+            <a href="#">a</a>
+            <a href="#">b</a>
+            <a href="#">c</a>
+            <a href="#">d</a>
+        </nav>
+    </header>
+    <aside>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </aside>
+    <main>
+        <section class="s1"></section>
+        <section class="s2"></section>
+        <section class="s3"></section>
+        <section class="s4"></section>
+    </main>
+    <script>
+
+        const nav = document.querySelectorAll('nav a')
+        const section = document.querySelectorAll('section')
+        const bar = document.querySelectorAll('aside .bar')
+        console.log(nav, section, bar)
+
+        for(let i of bar){i.style.transition='all 0.3s'}
+        bar_reset(0) //초기 bar
+        window.addEventListener('scroll',()=>{
+            if(window.pageYOffset >= section[0].offsetTop){bar_reset(0)}
+            if(window.pageYOffset >= section[1].offsetTop-200){bar_reset(1)}
+            if(window.pageYOffset >= section[2].offsetTop-200){bar_reset(2)}
+            if(window.pageYOffset >= section[3].offsetTop-200){bar_reset(3)}
+        })
+        function bar_reset(num){
+            for(let i of bar){i.classList.remove('bar_active')}
+            bar[num].classList.add('bar_active')
+        }
+        nav.forEach((target,index)=>{
+            target.addEventListener('click',(e)=>{
+                e.preventDefault()
+                window.scrollTo(0,section[index].offsetTop)
+            })
+        })
+
+    </script>
+</body>
+</html>
