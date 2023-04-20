@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer-2</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        #slider_wrap {
+            height:200px;
+            overflow:hidden;
+        }
+        #slider_wrap #slider_container {
+            transition: transform 0.1s;
+        }
+        #slider_wrap #slider_container .slide {
+            line-height:200px; width:700px; text-align: center; font-size:5rem;
+        }
+        #slider_wrap #slider_container .slide1 {background: aqua;}
+        #slider_wrap #slider_container .slide2 {background: pink;}
+        #slider_wrap #slider_container .slide3 {background:yellow;}
+    </style>
+</head>
+<body>
+    
+    <div id="slider_wrap">
+        <div id="slider_container">
+            <div class="slide slide1">1</div>
+            <div class="slide slide2">2</div>
+            <div class="slide slide3">3</div>
+        </div>
+    </div>
+    <script>
+
+        // const slide = document.querySelector('#slider_container')
+        // let num = 0
+        // let timer =setInterval(slide_set,1000)
+        // function slide_set(){
+        //num++
+        // if(num>2){num=0}
+        // slide.style.transform = `translateY(-${num*200px})`
+        // }
+        // ------------------------------------------------------------
+        // const slide = document.querySelector('#slider_container')
+        // let num = 1
+        // let slide_h = slide.firstElementChild.offsetHeight
+        // let count =slide.children.length-1
+        // setInterval(()=>{
+        //     ++num
+        //     if(num>count){num=0}
+        //     slide.style.transform = `translateY(-${slide_h*num}px)`
+        // },1000)
+    </script>
+</body>
+</html>

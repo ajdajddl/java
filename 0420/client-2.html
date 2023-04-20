@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>client1</title>
+    <style>
+        body,html {cursor:none;}
+        .circle {
+            width:80px; height:80px; 
+            position:fixed; left:0; top:0;
+            transform: translate(-50%,-50%);
+            /* animation: cat 2s linear infinite; */
+            /* transition:all 0.2s ease; */
+        }
+        .circle img {width:100%;}
+        @keyframes cat {
+            0% {transform: translate(0,0), rotate(0);}
+            100% {transform: translate(-50px,-20px), rotate(45deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="circle"><img src="./images/black-cat.png" alt=""></div>
+    <script>
+
+        const circle =document.querySelector('.circle')
+
+        window.addEventListener('mousemove',(e)=>{
+            circle.style.left =`${e.clientX}px`
+            circle.style.top =`${e.clientY}px`
+        })
+
+    </script>
+</body>
+</html>

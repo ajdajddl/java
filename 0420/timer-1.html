@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer-1</title>
+</head>
+<body>
+    
+
+    <script>
+
+        //setInterbal 일정시간 반복 타이머 함수 //1000 = 1초
+        let num = 0
+        setInterval(()=>{
+            if(num>5){num=0}
+            console.log('setInterval-'+num)
+            ++num
+             //초기값에 따라 증감연산자의 위치 설정
+        },500)//0.5초 후에 0부터 시작해서 1출력 ++증감연산자로 5까지 증가후 다시 1 반복
+    </script>
+</body>
+</html>
